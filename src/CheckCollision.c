@@ -24,3 +24,12 @@ int CheckCollision(const int tetrominoStartX, const int tetrominoStartY, const i
 
     return 0;
 }
+
+int CheckGameover(){
+    for(int x = 0; x < STAGE_WIDTH-1; x++){
+        if(stage[x] > 1){
+            return 1;
+        }
+    }
+    return 0;
+}

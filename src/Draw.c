@@ -59,6 +59,23 @@ void DrawAll(tetromino *tetr){
         
     EndDrawing();
 }
+void PlayAnimation(int startLineY,tetromino *tet){
+    unsigned char z = 0;
+    for(int i = 0; i < 50;i++){
+        BeginDrawing();
+        for (int y = startLineY; y < STAGE_HEIGHT-1; y++)
+        {
+            if(z){
+                DrawRectangle(1* TILE_SIZE + tet->startOffsetX, y * TILE_SIZE + tet->startOffsetY,(STAGE_WIDTH-2) * TILE_SIZE,TILE_SIZE, BLACK);
+                z = 0;
+            } else {
+                DrawRectangle(1* TILE_SIZE + tet->startOffsetX, y * TILE_SIZE + tet->startOffsetY,(STAGE_WIDTH-2) * TILE_SIZE,TILE_SIZE, WHITE);
+                z = 1; 
+            }
+        }
+        EndDrawing();
+    } 
+}
 void DrawGameover(){
     BeginDrawing();
     ClearBackground(RAYWHITE);

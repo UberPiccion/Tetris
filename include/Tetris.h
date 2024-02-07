@@ -9,7 +9,8 @@
 int CheckCollision(const int tetrominoStartX, const int tetrominoStartY, const int *tetromino);
 void drawTetromino(tetromino *tetr, const int *type, Color color);
 void ResetLines(int startLineY);
-void DeleteLines(int* points, float* speed);
+void DeleteLines(int *points, float *speed,tetromino *tetr);
 int CheckGameover();
 void Gameover();
 void DrawAll(tetromino *tetr);
+void PlayAnimation(int startLineY,tetromino *tet);

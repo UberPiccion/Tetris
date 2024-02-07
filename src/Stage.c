@@ -43,7 +43,7 @@ void ResetLines(int startLineY)
     }   
 }
 
-void DeleteLines(int *points, float *speed)
+void DeleteLines(int *points, float *speed,tetromino *tetr)
 {
     for (int y = 0; y < STAGE_HEIGHT - 1; y++)
     {
@@ -66,6 +66,7 @@ void DeleteLines(int *points, float *speed)
             memset(stage+offset,0,(STAGE_WIDTH-2)* sizeof(int));
             *points += 100;
             *speed += 0.1f;
+            PlayAnimation(y,tetr);
             ResetLines(y);
         }
     }   

@@ -13,20 +13,7 @@ extern Music music_intro;
 extern Music music_main;
 extern Music music_gameover;
 
-// void PlayAnimation(int startLineY,const int startOffsetX, const int startOffsetY){
-//     BeginDrawing();
-//     for(int i = 0; i > 100;i++){
-//         for (int y = startLineY; y >= 0; y--)
-//         {
-//             for (int x = 1; x < STAGE_WIDTH - 1; x++)
-//             {
-//                 DrawRectangle(x * TILE_SIZE + startOffsetX, y * TILE_SIZE + startOffsetY, TILE_SIZE, TILE_SIZE, BLACK);
-//             }
-//         }
-//     }
-//     EndDrawing();
-    
-// }
+
 
 int points = 0;
 float speed = 1.0f;
@@ -151,8 +138,7 @@ int main(int argc, char** argv, char** environ)
                         }
                     }
                 }
-
-                DeleteLines(&points, &speed);
+                DeleteLines(&points, &speed,tetr);
 
                 tetr->tetrominoX = tetr->StartX;
                 tetr->tetrominoY = tetr->StartY;
